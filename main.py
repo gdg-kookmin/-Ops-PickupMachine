@@ -10,7 +10,7 @@ k = n//4
 
 # 그룹별 분류
 group_Leader = [[student.student_id, student.name, student.p1_count] for student in students if student.group == "Leader"]
-group_A = [[student.student_id, student.name] for student in students if student.group == "A"]
+group_A = [[student.student_id, student.name, student.p1_count] for student in students if student.group == "A"]
 group_B = [[student.student_id, student.name] for student in students if student.group == "B"]
 group_C = [[student.student_id, student.name, student.p3_count] for student in students if student.group == "C"]
 random.shuffle(group_Leader) # DB 만들면 이 부분 삭제
