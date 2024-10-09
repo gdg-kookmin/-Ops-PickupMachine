@@ -36,7 +36,7 @@ print(f'A 그룹 인원: {len(group_A)}')
 print(f'B 그룹 인원: {len(group_B)}')
 print(f'C 그룹 인원: {len(group_C)}')
 
-# A그룹 인원 조정
+# A그룹-B그룹 간 인원 조정
 required_A_size = 2 * k - len(group_Leader)  # A 그룹이 가져야 하는 인원 수 계산
 print(required_A_size)
 if len(group_A) > required_A_size:
@@ -50,7 +50,7 @@ elif len(group_A) < required_A_size:
     group_B = group_B[(required_A_size - len(group_A)):]
     group_A += B_to_A
 
-# B그룹 인원 조정
+# B그룹-C그룹 간 인원 조정
 if len(group_B) > k:
     group_B.sort(key=lambda x: x[3])
     B_to_C = group_B[k:]
