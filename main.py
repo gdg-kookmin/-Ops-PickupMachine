@@ -20,9 +20,6 @@ cursor = db.cursor()
 cursor.execute("SELECT student_id, name, positions, default_group, p1_count, p3_count FROM students WHERE present = 1")
 attending_students = cursor.fetchall()
 
-# 시드를 현재 시간으로 설정
-random.seed(time.time())
-
 n = len(attending_students)
 k = max(1, n // 4)  # 최소 1개의 팀을 보장
 
@@ -94,6 +91,8 @@ print(f'Pot 2 인원 수: {len(pot_2)}')
 print(f'Pot 3 인원 수: {len(pot_3)}')
 print(f'Remaining C 인원 수: {len(remaining_C)}')
 
+# 시드를 현재 시간으로 설정
+random.seed(time.time())
 random.shuffle(pot_1)
 random.shuffle(pot_2)
 random.shuffle(group_B)
